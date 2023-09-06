@@ -6,30 +6,33 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="stylesheet.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
   
-  <title>Frontend Mentor | Interactive comments section</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <title>Interactive Comments Section</title>
 
 </head>
 <body>
 
-  <!-- Pull dynamic content from the data.json file -->
   
   <main>
-    <div id="comment_section" class="comments">
-        <div id="reply_section" class="comments">
+<div id="whole_comment">
+  <div id="comment_section" >
 
-        </div>
-    </div>
+  </div>
+  <textarea placeholder="Add a comment" id="textbox"></textarea>
+  <button id="send" type="submit">Send</button>
 
+</div>
+
+
+    <button id="to_top" class="fuctions">top</button>
+    <button id="dark_mode" class="fuctions">dark</button>
 
   </main>
 
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Kelvin Owusu</a>.
-  </div>
+  </footer>
 </body>
 </html>
