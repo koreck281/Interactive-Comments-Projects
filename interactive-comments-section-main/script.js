@@ -8,12 +8,11 @@ function addComments(){
     let counter = 0
     val = document.getElementById("textbox").value
     console.log(val)
-    comments_section.innerHTML += "<div class='comment'>"+ "<div id='votes'>" +
-    "<img src='http://localhost:8000/images/icon-plus.svg' class='vote'>" + counter+
-    "<img src='http://localhost:8000/images/icon-minus.svg'class='vote'>" + "</div>"
-     "<p>"+ val +"<p/>" + "<img src='http://localhost:8000/images/icon-reply.svg'>" + "</div>"
+    comments_section.innerHTML += "<div class='comment'><div id='votes'>" +
+    "<button><img src='http://localhost:8000/images/icon-plus.svg' class='vote'></button>" + counter +
+    "<button><img src='http://localhost:8000/images/icon-minus.svg'class='vote'></button></div>"+
+     "<p>"+ val +"<p/>" + "<button id='reps'><img src='http://localhost:8000/images/icon-reply.svg' ></button></div>"
 
-    val.reset();
 }
 
 

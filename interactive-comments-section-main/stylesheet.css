@@ -35,22 +35,45 @@ margin-top: 5px;
 margin-bottom: 5px;
 padding-top: 5px;
 padding-bottom: 5px;
+text-align: center;
+position: relative;
 background-color: hsl(0, 0%, 100%);
 border-radius: 5px;
 
 }
-.vote{
-    display: block;
-    margin: 5px;
-}
 
+img{
+    background-color: transparent;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin:0;
+}
+button{
+    background-color: transparent;
+}
+.vote{
+    margin: 2px;
+    width: 3px;
+    height: 3px;
+}
+#reps{
+    position: absolute;
+    top: 0;
+    right: 20%;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
 .vote:hover{
     color: hsl(212, 24%, 26%);
 }
 
 #votes{
     border: 2px solid  hsl(223, 19%, 93%);
-    display: inline;
+    display: flex;
+    flex-direction: column;
 
 }
 
