@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .comment-container {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .comment-box {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .reply-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .counter {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .counter button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .comment-text {
+            margin: 10px 0;
+        }
+
+        .new-comment {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .new-comment textarea {
+            resize: none;
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        .new-comment button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="comment-container">
+        <div class="comment-box">
+            <div class="comment-header">
+                <button class="reply-button">Reply</button>
+                <div class="counter">
+                    <button class="increase">+</button>
+                    <span class="value">0</span>
+                    <button class="decrease">-</button>
+                </div>
+            </div>
+            <div class="comment-text">
+                This is a sample comment.
+            </div>
+        </div>
+
+        <div class="new-comment">
+            <textarea id="new-comment-text" placeholder="Enter your comment"></textarea>
+            <button id="send-comment">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const commentContainer = document.querySelector('.comment-container');
+        const newCommentText = document.querySelector('#new-comment-text');
+        const sendCommentButton = document.querySelector('#send-comment');
+
+        sendCommentButton.addEventListener('click', () => {
+            const commentText = newCommentText.value.trim();
+            if (commentText !== '') {
+                createCommentBox(commentText);
+                newCommentText.value = '';
+            }
+        });
+
+        function createCommentBox(text) {
+            const commentBox = document.createElement('div');
+            commentBox.className = 'comment-box';
+
+            const commentHeader = document.createElement('div');
+            commentHeader.className = 'comment-header';
+
+            const replyButton = document.createElement('button');
+            replyButton.className = 'reply-button';
+            replyButton.textContent = 'Reply';
+
+            const counter = document.createElement('div');
+            counter.className = 'counter';
+
+            const increaseButton = document.createElement('button');
+            increaseButton.className = 'increase';
+            increaseButton.textContent = '+';
+
+            const valueSpan = document.createElement('span');
+            valueSpan.className = 'value';
+            valueSpan.textContent = '0';
+
+            const decreaseButton = document.createElement('button');
+            decreaseButton.className = 'decrease';
+            decreaseButton.textContent = '-';
+
+            const commentTextElement = document.createElement('div');
+            commentTextElement.className = 'comment-text';
+            commentTextElement.textContent = text;
+
+            commentHeader.appendChild(replyButton);
+            counter.appendChild(increaseButton);
+            counter.appendChild(valueSpan);
+            counter.appendChild(decreaseButton);
+            commentHeader.appendChild(counter);
+            commentBox.appendChild(commentHeader);
+            commentBox.appendChild(commentTextElement);
+
+            commentContainer.appendChild(commentBox);
+
+            let counterValue = 0;
+
+            increaseButton.addEventListener('click', () => {
+                counterValue++;
+                valueSpan.textContent = counterValue;
+            });
+
+            decreaseButton.addEventListener('click', () => {
+                counterValue--;
+                valueSpan.textContent = counterValue;
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .comment {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .reply {
+            margin-left: 20px;
+            border-left: 1px solid #ccc;
+            padding-left: 10px;
+        }
+
+        .edit-buttons {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .edit-buttons button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="comment">
+        <p>This is the original comment.</p>
+        <div class="edit-buttons">
+            <button onclick="editComment(this)">Edit</button>
+            <button onclick="updateComment(this)" style="display: none;">Update</button>
+        </div>
+        <button onclick="toggleReplyForm(this)">Reply</button>
+        <div class="reply-form" style="display: none;">
+            <textarea></textarea>
+            <button onclick="addReply(this)">Submit</button>
+        </div>
+        <div class="replies">
+            <!-- Replies will be added here -->
+        </div>
+    </div>
+
+    <script>
+        function toggleReplyForm(button) {
+            const replyForm = button.nextElementSibling;
+            replyForm.style.display = replyForm.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function editComment(editButton) {
+            const comment = editButton.parentElement.parentElement;
+            const commentText = comment.querySelector('p');
+            const editButtons = comment.querySelector('.edit-buttons');
+            const updateButton = editButtons.querySelector('button:nth-child(2)');
+
+            commentText.contentEditable = true;
+            commentText.style.border = '1px solid #007bff';
+            editButton.style.display = 'none';
+            updateButton.style.display = 'inline-block';
+        }
+
+        function updateComment(updateButton) {
+            const comment = updateButton.parentElement.parentElement;
+            const commentText = comment.querySelector('p');
+            const editButtons = comment.querySelector('.edit-buttons');
+            const editButton = editButtons.querySelector('button:nth-child(1)');
+
+            commentText.contentEditable = false;
+            commentText.style.border = 'none';
+            editButton.style.display = 'inline-block';
+            updateButton.style.display = 'none';
+        }
+
+        function addReply(button) {
+            // Same reply code as in the previous example
+        }
+    </script>
+</body>
+</html>

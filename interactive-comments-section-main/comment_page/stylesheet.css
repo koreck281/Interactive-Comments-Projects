@@ -1,0 +1,217 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body{
+    font-size: 16px;
+    background-color: hsl(223, 19%, 93%);
+}
+
+main{
+    width: 60%;
+    height: 80%;
+    margin: auto;
+}
+
+.dark-mode{
+    background-color: hsl(240, 1%, 14%);
+    color:   hsl(223, 19%, 93%);
+
+}
+#whole_comment{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius:10px ;
+    margin: auto;
+    padding-top: 10px;
+    
+}
+
+.comment{
+display: block;
+border: 1px solid grey;
+margin-top: 5px;
+margin-bottom: 5px;
+padding-top: 5px;
+padding-bottom: 5px;
+padding-left: 2%;
+padding-right: 5%;
+position: relative;
+background-color: hsl(0, 0%, 100%);
+border-radius: 5px;
+
+}
+
+#text{
+    padding-left: 5%;
+    display: inline;
+}
+
+.vote{
+    padding: 2px;
+    background: transparent;
+    border: none
+} 
+.button_img{
+    background: transparent;
+    border: none;
+    align-content: center;
+
+}
+
+
+#counter {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: hsl(238, 40%, 52%);
+}
+
+.button_img img:hover {
+    opacity: .5;
+}
+
+#reps{
+    position: absolute;
+    top: 0;
+    right: 2%;
+    background-color: transparent;
+    padding: 2%;
+    margin: 0;
+    width: 7px;
+    height: 7px;
+    border: none;
+}
+.vote:hover{
+    color: hsl(212, 24%, 26%);
+}
+
+.button_img:hover{
+    color: hsl(212, 24%, 26%);
+}
+
+#votes{
+    border: 2px solid  hsl(223, 19%, 93%);
+    border-radius: 5px;
+    display: inline-block;
+    flex-direction: column;
+    width: 7%;
+    height: 7%;
+    background: hsl(228, 33%, 97%);
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+
+/* //////////////////////////
+
+
+*/
+
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+.comment-box {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 9px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reply-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid  hsl(223, 19%, 93%);
+
+}
+
+.counter button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.comment-text {
+    margin: 10px 0;
+}
+
+.new-comment {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-comment textarea {
+    resize: none;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.new-comment button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.value{
+    text-align: center;
+    color: #007bff;
+}
+
+.updateComment{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    display: none;
+}
+
+.show{
+    display:contents;
+}
+
+
+.edit-buttons {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.edit-buttons button {
+    margin-right: 10px;
+}
